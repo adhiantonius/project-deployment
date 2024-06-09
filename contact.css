@@ -1,0 +1,144 @@
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-third);
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #001f3f;
+  --bg-secondary: #ff595a;
+  --bg-third: #cac0b3;
+  --txt-primary: #f7f7f7;
+  --txt-secondary: #222222;
+  --icons-bg-primary: #ff595a;
+  --icons-bg-secondary: #777777;
+}
+
+.box--header {
+  background-color: var(--bg-primary);
+  color: var(--icons-bg-primary);
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.box--navigasi {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.box--menu {
+  margin-right: 20px;
+}
+
+.box--judul:hover {
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+  border-radius: 10%;
+}
+
+.box--judul {
+  color: var(--txt-primary);
+
+  text-decoration: none;
+}
+
+main {
+  padding: 12px;
+  height: auto;
+}
+
+.box--container {
+  width: 100%;
+  height: auto;
+  background-color: var(--bg-third);
+}
+
+.box--wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.box--card {
+  border: 1px solid var(--icons-bg-secondary);
+  background-color: var(--txt-primary);
+  color: var(--txt-secondary);
+  padding: 32px;
+  margin: 8px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.box--text-center {
+  text-align: center;
+}
+
+.box--title {
+  font-size: 90%;
+}
+
+.box--txt-judul {
+  font-size: 30px;
+}
+
+.box--icons {
+  margin-top: 8px;
+  font-size: 35px;
+  color: var(--icons-bg-primary);
+}
+
+.box--btn {
+  margin-top: 28px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  width: 80%;
+}
+
+.box--btn:hover {
+  background-color: var(--bg-primary);
+  color: var(--bg-secondary);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.box--footer {
+  background-color: var(--bg-primary);
+  color: var(--icons-bg-primary);
+  padding: 26.5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .box--header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box--navigasi {
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}

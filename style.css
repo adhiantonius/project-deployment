@@ -1,0 +1,212 @@
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-third);
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #001f3f;
+  --bg-secondary: #ff595a;
+  --bg-third: #cac0b3;
+  --txt-primary: #f7f7f7;
+  --txt-secondary: #222222;
+}
+
+.box--header {
+  background-color: var(--bg-primary);
+  color: var(--bg-secondary);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.box--navigasi {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box--menu {
+  margin-right: 20px;
+}
+
+.box--button {
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+  border-radius: 25px;
+}
+
+.box--button:hover {
+  background-color: var(--bg-primary);
+  color: var(--bg-secondary);
+  border-radius: 15px 50px;
+}
+
+.box--judul {
+  color: var(--txt-primary);
+  text-decoration: none;
+}
+
+.box--judul:hover {
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+  border-radius: 10%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  padding: 5px;
+  grid-template-areas:
+    "chart1 chart2 chart3"
+    "chart4 chart4 chart5"
+    "dashboard dashboard dashboard";
+}
+
+/* Menggunakan ID untuk merujuk elemen */
+#chart1 {
+  grid-area: chart1;
+}
+
+#chart2 {
+  grid-area: chart2;
+}
+
+#chart3 {
+  grid-area: chart3;
+}
+
+#chart4 {
+  grid-area: chart4;
+}
+
+#chart5 {
+  grid-area: chart5;
+}
+
+#dashboard {
+  grid-area: dashboard;
+}
+
+h1 {
+  font-size: large;
+}
+
+h2 {
+  font-size: larger;
+}
+
+.box--no-change {
+  font-size: 30px; /* Atur ukuran sesuai keinginan atau gunakan 'initial' untuk ukuran default */
+}
+
+.box {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+section {
+  background-color: var(--txt-primary);
+  padding: 20px;
+  border: 1.5px solid var(--bg-primary);
+  border-radius: 10px;
+}
+
+.box--footer {
+  background-color: var(--bg-primary);
+  color: var(--bg-secondary);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .box--header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box--navigasi {
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #data-table th,
+  #data-table td {
+    padding: 1px;
+    border: 0px solid var(--bg-primary);
+  }
+
+  /* Memperkecil ukuran font hanya pada isian tabel (td) */
+  #data-table td {
+    font-size: 10px; /* Sesuaikan ukuran font sesuai kebutuhan Anda */
+  }
+}
+/* Gaya umum untuk tabel dengan ID data-table */
+#data-table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  border-collapse: collapse;
+}
+
+#data-table th,
+#data-table td {
+  padding: 4px;
+  border: 1px solid var(--bg-primary);
+}
+
+/* Warna latar belakang untuk baris ganjil */
+#data-table tr:nth-child(odd) {
+  background-color: var(--txt-primary);
+}
+
+/* Warna latar belakang untuk baris genap */
+#data-table tr:nth-child(even) {
+  background-color: var(--bg-third);
+}
+
+/* Memperkecil ukuran font hanya pada isian tabel (td) */
+#data-table td {
+  font-size: 12px; /* Sesuaikan ukuran font sesuai kebutuhan Anda */
+}
+
+/* Teks rata tengah untuk kolom yang ditentukan */
+#data-table td:nth-of-type(4), /* Total Units */
+#data-table td:nth-of-type(5), /* Land Square Feet */
+#data-table td:nth-of-type(6), /* Gross Square Feet */
+#data-table td:nth-of-type(7), /* Year Built */
+#data-table td:nth-of-type(8), /* Sale Price */
+#data-table td:nth-of-type(9) /* Sale Date */ {
+  text-align: center;
+}
+
+/* Tambahan */
+.pagination_button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

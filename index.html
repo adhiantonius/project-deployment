@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="box--header">
+      <h2 class="box--no-change">Dashboard NYC Property</h2>
+      <nav>
+        <ul class="box--navigasi">
+          <li class="box--menu">
+            <i class="fa-solid fa-house"></i>
+            <a href="home.html" class="box--judul">Home</a>
+          </li>
+          <li class="box--menu">
+            <i class="fa-solid fa-user"></i>
+            <a href="contact.html" class="box--judul">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+
+      <section id="chart1">
+        <h2><i class="fa-solid fa-chart-pie"></i> Pie Chart</h2>
+        <h1>Total Unit Sales by Borough In New York Sales Property</h1>
+        <article>
+          <canvas id="myPieChart"></canvas>
+        </article>
+      </section>
+
+      <section id="chart2">
+        <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+        <article>
+          <h1>Total Units Sales per Months In Bronx</h1>
+          </select>
+          <canvas id="unitsSoldChart"></canvas>
+        </article>
+      </section>
+
+      <section id="chart3">
+        <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+        <article>
+          <h1>Total Selling Price per Months In Bronx</h1>
+          </select>
+          <canvas id="salePriceChart"></canvas>
+        </article>
+      </section>
+
+      <section id="chart4">
+        <h2><i class="fa-solid fa-chart-column"></i> Bar Chart</h2>
+        <h1> Total Units Sales by Neighborhood in Bronx </h1>
+        <article>
+          <canvas id="totalSalesChart"></canvas>
+        </article>
+      </section>
+
+      <section id="chart5">
+        <h2><i class="fa-solid fa-chart-pie"></i> Pie Chart</h2>
+        <h1>Total Units Sales by Building Class Category</h1>       
+        <article>
+            <div class="filters">
+                <label for="neighborhoodSelector">Select Neighborhood:</label>
+                <select id="neighborhoodSelector"></select>
+            </div>
+            <div class="chart-container">
+                <canvas id="buildingChart"></canvas>
+                <script src="index.js"></script>
+            </div>
+        </article>
+    </section>
+
+    <section id="dashboard">
+      <h2><i class="fa-solid fa-table"></i> Data Table</h2>
+      <h2>
+        Building Unit Sales in the New York Property Market in the Bronx
+        Region
+      </h2>
+      <article>
+        <div>
+          <label for="sort-key">Sort by:</label>
+          <select id="sort-key">
+            <option value="-">-</option>
+            <option value="sale price">Sale Price</option>
+            <option value="sale date">Sale Date</option>
+            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+          </select>
+          <button class="box--button" id="sort-button">Sort</button>
+        </div>
+        <div>
+          <label for="filter-key">Filter by:</label>
+          <select id="filter-key">
+            <option value="-">-</option>
+            <option value="building class category">
+              Building Class Category
+            </option>
+            <option value="sale month">Sale Month</option>
+            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+          </select>
+          <input type="text" id="filter-value" placeholder="Filter value" />
+          <button class="box--button" id="filter-button">Filter</button>
+          <button class="box--button" id="reset">Reset</button>
+        </div>
+        <div>
+          <label for="page-number">Page:</label>
+          <input type="number" id="page-number" min="1" max="51" value="1" />
+          <button class="box--button" id="go-to-page-button">Go</button>
+        </div>
+        <table border 1 id="data-table">
+          <thead>
+            <tr>
+              <th>Neighborhood</th>
+              <th>Building Class Category</th>
+              <th>Address</th>
+              <th>Total Units</th>
+              <th>Land Square Feet</th>
+              <th>Gross Square Feet</th>
+              <th>Year Built</th>
+              <th>Sale Price</th>
+              <th>Sale Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data akan diisi menggunakan JavaScript -->
+          </tbody>
+        </table>
+      </article>
+      <div class="pagination_button">
+        <span></span>
+        <div class="index_button"></div>
+      </div>
+    </section>
+    
+
+    </main>
+
+    <footer class="box--footer">
+      <p>&copy; Team 11 - Surabaya.</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
