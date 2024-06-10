@@ -3,17 +3,17 @@
 let jsonData
 document.addEventListener('DOMContentLoaded', () => {
   // Data jumlah properti di setiap borough
-  const boroughCounts = {
-    'Manhattan': 18102,
-    'Bronx': 6994,
-    'Brooklyn': 23843,
-    'Queens': 26548,
-    'Staten Island': 8296
-  };
+  const dataInPercent = {
+    'Manhattan': '21.61%',
+    'Bronx': '8.35%',
+    'Brooklyn': '28.46%',
+    'Queens': '31.69%',
+    'Staten Island': '9.90%'
+ };
 
   // Mendapatkan label dan nilai dari data boroughCounts
-  const labels = Object.keys(boroughCounts);
-  const values = Object.values(boroughCounts);
+  const labels = Object.keys(dataInPercent);
+  const values = Object.values(dataInPercent).map(value => parseFloat(value));
 
   // Mengambil konteks dari canvas untuk Pie Chart
   const ctx = document.getElementById('myPieChart').getContext('2d');
@@ -48,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
           position: 'left', // Posisi legenda di kiri
         },
         tooltip: {
-          enabled: true // Mengaktifkan tooltip
+          enabled: true, // Mengaktifkan tooltip
+          callbacks: {
+            label: function(tooltipItem) {
+              return `${tooltipItem.label}: ${tooltipItem.raw}%`; // Menambahkan simbol % ke tooltip
+            }
+          }
         }
       }
     }
@@ -376,6 +381,16 @@ fetch('Data_Team_11.json')
         max_index++;
       }
     }
+
+    // box1
+    function updateTotalSalePrice(data) {
+      // Menghitung total sale price dari data
+      const TotalSalePrice = data.reduce((total, sale) => total + parseFloat(sale.SALE_PRICE), 0);
+      // Mendapatkan elemen dengan ID "TotalSalePrice" dan mengubah kontennya
+      document.getElementById("TotalSalePrice").textContent = "$" + TotalSalePrice.toFixed(0);
+      }
+      // Panggil function dengan data Anda
+      updateTotalSalePrice(data); 
 
     //Fungsi untuk melakukan pengurutan data (Sorting)
     function sorting() {

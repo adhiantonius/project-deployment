@@ -1,3 +1,4 @@
+/* Gaya Default (untuk layar besar) */
 html,
 body {
   font-family: "Poppins", sans-serif;
@@ -10,7 +11,7 @@ body {
   --bg-primary: #001f3f;
   --bg-secondary: #ff595a;
   --bg-third: #cac0b3;
-  --txt-primary: #f7f7f7;
+  --txt-primary: #ffffff;
   --txt-secondary: #222222;
 }
 
@@ -70,12 +71,25 @@ main {
   gap: 10px;
   padding: 5px;
   grid-template-areas:
+    "box1 box2 box3"
     "chart1 chart2 chart3"
     "chart4 chart4 chart5"
     "dashboard dashboard dashboard";
 }
 
 /* Menggunakan ID untuk merujuk elemen */
+#box1 {
+  grid-area: box1;
+}
+
+#box2 {
+  grid-area: box2;
+}
+
+#box3 {
+  grid-area: box3;
+}
+
 #chart1 {
   grid-area: chart1;
 }
@@ -100,12 +114,31 @@ main {
   grid-area: dashboard;
 }
 
-h1 {
-  font-size: large;
+#box1, #box2, #box3 {
+  background-color: #ffffff; 
+  color: #001f3f; 
+  padding: 0px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#box1 h1, #box2 h1, #box3 h1 {
+  font-size: large; 
+  margin: 0; 
+  color: black;
+}
+
+#box1 h2, #box2 h2, #box3 h2 {
+  font-size: 25px; 
+  color: #001f3f;
+  font-weight: bold; 
+  margin: 0; 
+}
+
+h1,
 h2 {
-  font-size: larger;
+  font-size: large;
 }
 
 .box--no-change {
@@ -136,9 +169,12 @@ section {
   align-items: center;
 }
 
+/* Gaya untuk layar kecil */
 @media screen and (max-width: 900px) {
   main {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .box--header {
@@ -147,10 +183,6 @@ section {
   }
 
   .box--navigasi {
-    flex-direction: column;
-  }
-  main {
-    display: flex;
     flex-direction: column;
   }
 
@@ -165,6 +197,7 @@ section {
     font-size: 10px; /* Sesuaikan ukuran font sesuai kebutuhan Anda */
   }
 }
+
 /* Gaya umum untuk tabel dengan ID data-table */
 #data-table {
   width: 100%;
@@ -175,7 +208,7 @@ section {
 
 #data-table th,
 #data-table td {
-  padding: 4px;
+  padding: 5px;
   border: 1px solid var(--bg-primary);
 }
 
