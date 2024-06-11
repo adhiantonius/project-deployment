@@ -114,26 +114,32 @@ main {
   grid-area: dashboard;
 }
 
-#box1, #box2, #box3 {
-  background-color: #ffffff; 
-  color: #001f3f; 
+#box1,
+#box2,
+#box3 {
+  background-color: #ffffff;
+  color: #001f3f;
   padding: 0px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#box1 h1, #box2 h1, #box3 h1 {
-  font-size: large; 
-  margin: 0; 
+#box1 h1,
+#box2 h1,
+#box3 h1 {
+  font-size: large;
+  margin: 0;
   color: black;
 }
 
-#box1 h2, #box2 h2, #box3 h2 {
-  font-size: 25px; 
+#box1 h2,
+#box2 h2,
+#box3 h2 {
+  font-size: 25px;
   color: #001f3f;
-  font-weight: bold; 
-  margin: 0; 
+  font-weight: bold;
+  margin: 0;
 }
 
 h1,
@@ -172,7 +178,6 @@ section {
 /* Gaya untuk layar kecil */
 @media screen and (max-width: 900px) {
   main {
-    grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
   }
@@ -195,6 +200,45 @@ section {
   /* Memperkecil ukuran font hanya pada isian tabel (td) */
   #data-table td {
     font-size: 10px; /* Sesuaikan ukuran font sesuai kebutuhan Anda */
+  }
+}
+
+/* Gaya untuk layar sedang */
+@media screen and (max-width: 1200px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "box1 box2"
+      "box3 box3"
+      "chart1 chart2"
+      "chart3 chart3"
+      "chart4 chart5"
+      "dashboard dashboard";
+  }
+
+  .box--header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box--navigasi {
+    flex-direction: row;
+  }
+
+  .box--button {
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
+    border-radius: 25px;
+  }
+
+  .box--button:hover {
+    background-color: var(--bg-primary);
+    color: var(--bg-secondary);
+    border-radius: 15px 50px;
+  }
+  #data-table td {
+    font-size: 11px; /* Sesuaikan ukuran font sesuai kebutuhan Anda */
   }
 }
 
